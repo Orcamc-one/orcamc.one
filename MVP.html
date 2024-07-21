@@ -1,0 +1,18 @@
+<html>
+  <header>
+    <title>MVP Purchase Conformation</title>
+  </header>
+
+  <body>
+    <h1>MVP</h1>
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAZqsGO2L6lnxmYH-IVq7dXujU6ZqBF1ItPx9CdT7IS3MhdrHxaUx530KhJBqjJ9TdDPCaf5585Pt6M3M&components=hosted-buttons&disable-funding=venmo&currency=USD"></script>
+    <div id="paypal-container-KVS8J8S997J6U"></div>
+    <script>
+      paypal
+        .HostedButtons({
+          hostedButtonId: "KVS8J8S997J6U",
+        })
+        .render("#paypal-container-KVS8J8S997J6U");
+    </script>
+  </body>
+</html>

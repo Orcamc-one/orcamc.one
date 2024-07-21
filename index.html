@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orcamc Store</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        text-align: center;
+        margin: 20px;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .product {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 20px;
+        text-align: left;
+        cursor: pointer; /* Add cursor pointer for clickable effect */
+      }
+      .product h2 {
+        margin-top: 0;
+      }
+      .username-input {
+        display: none; /* Hide username input by default */
+        margin-top: 20px;
+      }
+      .username-input input[type="text"] {
+        padding: 10px;
+        width: 200px;
+        font-size: 16px;
+      }
+      .buy-button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      .buy-button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Our Store</h1>
+
+      <div class="product" onclick="toggleUsername('product1')">
+        <h2>MVP</h2>
+        <p>
+          Description of Product 1. Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit.
+        </p>
+        <p>Price: $15</p>
+        <button class="buy-button">Buy Now</button>
+        <div id="username-input-product1" class="username-input">
+          <form action="MVP.html" method="POST">
+            <label for="username-product1">Enter your username:</label>
+            <input
+              type="text"
+              id="username-product1"
+              name="username"
+              required
+            />
+            <button type="submit" class="buy-button">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="product" onclick="toggleUsername('product2')">
+        <h2>Vip Plus</h2>
+        <p>
+          Description of Product 2. Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit.
+        </p>
+        <p>Price: $10</p>
+        <button class="buy-button">Buy Now</button>
+        <div id="username-input-product2" class="username-input">
+          <form action="purchase-handler.php" method="POST">
+            <label for="username-product2">Enter your username:</label>
+            <input
+              type="text"
+              id="username-product2"
+              name="username"
+              required
+            />
+            <button type="submit" class="buy-button">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="product" onclick="toggleUsername('product3')">
+        <h2>Vip</h2>
+        <p>
+          Description of Product 3. Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit.
+        </p>
+        <p>Price: $5</p>
+        <button class="buy-button">Buy Now</button>
+        <div id="username-input-product3" class="username-input">
+          <form action="purchase-handler.php" method="POST">
+            <label for="username-product3">Enter your username:</label>
+            <input
+              type="text"
+              id="username-product3"
+              name="username"
+              required
+            />
+            <button type="submit" class="buy-button">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      function toggleUsername(productId) {
+        // Hide all username inputs initially
+        var allUsernameInputs = document.querySelectorAll(".username-input");
+        allUsernameInputs.forEach(function (input) {
+          input.style.display = "none";
+        });
+
+        // Show username input for the clicked product
+        var usernameInput = document.getElementById(
+          "username-input-" + productId
+        );
+        usernameInput.style.display = "block";
+      }
+    </script>
+  </body>
+</html>
